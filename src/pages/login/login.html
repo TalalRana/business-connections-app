@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle></button>
+    <ion-title text-center>Member Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-2></ion-col>
+      <ion-col col-12 style="background-color:#222d32 !important; border-radius: 8px;">
+        <img ion-img src="../../assets/probusiness.png" style="padding: 30px">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <form [formGroup]="form" (ngSubmit)="login()">
+    <ion-card>
+      <ion-card-content>
+        <ion-list lines>
+          <ion-item>
+            <ion-input formControlName="email" type="email" [(ngModel)]="user.email" placeholder="Email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input formControlName="password" type="password" [(ngModel)]="user.password" placeholder="Password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <button ion-button block type="submit" color="dark" class="med" [disabled]="!form.valid"> Login</button>
+          </ion-item>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </form>
+    <ion-list no-lines>
+      <ion-item-divider></ion-item-divider>
+      <ion-item text-center>
+        <button ion-button outline class="" color="dark" block (click)="forget()"> Forget Password? </button>
+      </ion-item>
+    </ion-list>
+</ion-content>

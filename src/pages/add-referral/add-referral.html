@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Add Referral</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="form" (ngSubmit)="referralSubmit()">
+    <ion-list>
+      <ion-item>
+        <ion-input placeholder="Person Name" formControlName="person" [(ngModel)]="referral.person"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Company" formControlName="company" [(ngModel)]="referral.company"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Phone" formControlName="phone" [(ngModel)]="referral.phone" [brmasker]="{mask:'(000) 000 000000'}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Job Title" formControlName="job" [(ngModel)]="referral.job"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea placeholder="Details" formControlName="details" [(ngModel)]="referral.details" rows="5"></ion-textarea>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Net" formControlName="net" [(ngModel)]="referral.net" [brmasker]="{money: true, thousand:',', decimalCaracter: '.'}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Gross" formControlName="gross" [(ngModel)]="referral.gross" [brmasker]="{money: true, thousand:',', decimalCaracter: '.'}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <button ion-button block type="submit" color="dark" class="med" [disabled]="!form.valid"> Submit</button>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

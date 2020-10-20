@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Select Category & Member</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-select style="min-width: 100% !important;" interface="popover" placeholder="Select Category" (ionChange)="populateList()"
+        [(ngModel)]="category">
+          <ion-option *ngFor="let a of categories" [value]="a.id"> {{ a.name }} </ion-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item *ngFor="let m of members" (click)='selectedMember(m.id, m.chapter_id)'>
+            {{ m.name +' ('+ m.chapter+')' }}
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

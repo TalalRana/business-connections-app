@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Sent Referrals</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+      
+    <ion-card *ngFor="let a of data">
+      <ion-card-header>
+        <p>{{ a.to_name }} <small text-right>{{ a.datetime }}</small></p>
+      </ion-card-header>
+      <ion-card-content>
+        <b><u>{{ a.job }}</u></b><br>
+        <p>{{ a.details }}</p>
+        <ion-grid no-padding>
+          <ion-row no-padding>
+            <ion-col col-9 no-padding>
+              <b>Status: </b> {{a.status}}
+            </ion-col>
+            <ion-col col-3 no-padding>
+              <button ion-button block color="dark" small (click)="detail(a)">More</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  
+    <h4 *ngIf="!data.length" text-center>No referral found.</h4>
+  </ion-content>

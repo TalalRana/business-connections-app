@@ -1,0 +1,73 @@
+<ion-menu [content]="menu">
+  <ion-header>
+      <ion-navbar>
+          <ion-title text-center>
+              {{ user.name }} 
+          </ion-title>
+      </ion-navbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <!-- <ion-item no-bg>
+        <ion-icon name="add" left></ion-icon>&nbsp; Add Referral
+      </ion-item>
+      <ion-item no-bg>
+        <ion-icon name="my-incoming" left></ion-icon>&nbsp; Incoming Referrals
+      </ion-item>
+      <ion-item no-bg>
+        <ion-icon name="my-sent" left></ion-icon>&nbsp; Sent Referrals
+      </ion-item>
+      <ion-item no-bg>
+        <ion-icon name="checkmark" left></ion-icon>&nbsp; Completed Referrals
+      </ion-item> -->
+      <ion-item no-bg (click)="gotoPage('profile')" class="med">
+        <ion-icon name="person" left></ion-icon>&nbsp; My Profile
+      </ion-item>
+      <ion-item no-bg (click)="logout()" class="med">
+        <ion-icon name="power" left></ion-icon>&nbsp; Logout
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-header #menu>
+  <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu" color="light"></ion-icon>
+      </button>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item no-bg>
+          <button ion-button color="dark" block class="big" (click)="gotoPage('categoryMember')">
+            <ion-icon name="add" start></ion-icon> &nbsp; Add Referral
+          </button>
+          
+        </ion-item>
+        <ion-item no-bg>
+          <button ion-button color="dark" block class="big" (click)="gotoPage('recieved')">
+            <ion-icon name="my-incoming" left></ion-icon>&nbsp; Incoming Referrals
+          </button>
+        </ion-item>
+        <ion-item no-bg>
+          <button ion-button color="dark" block class="big" (click)="gotoPage('sent')">
+            <ion-icon name="my-sent" left></ion-icon>&nbsp; Sent Referrals
+          </button>
+        </ion-item>
+        <ion-item no-bg>
+          <button ion-button color="dark" block class="big" (click)="gotoPage('complete')">
+            <ion-icon name="checkmark" left></ion-icon>&nbsp; Completed Referrals
+          </button>
+        </ion-item>
+        <ion-item no-bg>
+          <button ion-button color="dark" block class="big" (click)="gotoPage('report')">
+            <ion-icon name="paper" left></ion-icon>&nbsp; Summary Report
+          </button>
+        </ion-item>
+      </ion-list>
+</ion-content>

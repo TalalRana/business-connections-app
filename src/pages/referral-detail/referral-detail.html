@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Referral Detail</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid *ngIf="type == 1">
+    <ion-row>
+      <ion-col col-12>
+        <b>Dated:</b> <u> {{ ref.datetime }}</u>
+      </ion-col>
+      <ion-col col-12>
+        <b>Sent By:</b>  {{ ref.from_name }}
+      </ion-col>
+      <ion-col col-12>
+        <b>Contact Person:</b>  {{ ref.person }}
+      </ion-col>
+      <ion-col col-12>
+        <b>Phone:</b>  {{ ref.phone }}
+      </ion-col>
+      <ion-col col-12>
+        <b>Job:</b> {{ ref.job }}
+      </ion-col>
+      
+      <ion-col col-12>
+        <b>Detail:</b> <br> {{ ref.details }} <br>
+      </ion-col>
+      <ion-col col-12>
+        <b>Net:</b> <u> ${{ ref.net }}</u>
+      </ion-col>
+      <ion-col col-12>
+        <ion-input placeholder="Gross" type="number" [(ngModel)]="ref.gross"></ion-input>
+      </ion-col>
+      <ion-col col-12>
+        <ion-textarea placeholder="Notes" rows="5" [(ngModel)]="ref.notes"></ion-textarea>
+      </ion-col>
+      <ion-col col-12>
+        <ion-select placeholder="Status" interface="popover" [(ngModel)]="ref.status"> 
+          <ion-option>Incomplete</ion-option>
+          <ion-option>Complete</ion-option>
+        </ion-select>
+      </ion-col>
+      <ion-col col-12>
+        <button ion-button block color="dark" (click)="update()">Update</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="type == 2">
+    <ion-row>
+      <ion-col col-12>
+        <b>Dated:</b> <u> {{ ref.datetime }}</u>
+      </ion-col>
+      <ion-col col-12>
+        <b>Sent By:</b>  {{ ref.from_name }}
+      </ion-col>
+      <ion-col col-12>
+        <b>Contact Person:</b>  {{ ref.person }}
+      </ion-col>
+      <ion-col col-12>
+        <b>Phone:</b>  {{ ref.phone }}
+      </ion-col>
+      <ion-col col-12>
+        <b>Job:</b> {{ ref.job }}
+      </ion-col>
+      
+      <ion-col col-12>
+        <b>Detail:</b> <br> {{ ref.details }} <br>
+      </ion-col>
+      <ion-col col-12>
+        <b>Net:</b>  ${{ ref.net }}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

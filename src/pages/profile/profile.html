@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>My Profile</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <!-- <form> -->
+    <ion-list no-lines>
+      <ion-item>
+        <ion-input [(ngModel)]="user.name" placeholder="Name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="user.company" placeholder="Company"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="user.phone" placeholder="Phone" [brmasker]="{phone:true}"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="user.designation" placeholder="Designation"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="user.chapter_name" readonly="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="user.email" readonly="true"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="user.password" placeholder="Password" type="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <button ion-button block color="dark" class="med" (click)="update()">Update</button>
+      </ion-item>
+    </ion-list>
+  <!-- </form> -->
+</ion-content>

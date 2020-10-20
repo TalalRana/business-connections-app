@@ -1,0 +1,80 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+// @import '../../node_modules/@swimlane/ngx-datatable/index.css';
+// @import '../../node_modules/@swimlane/ngx-datatable/themes/material.scss';
+// @import '../../node_modules/@swimlane/ngx-datatable/assets/icons.css';
+
+ion-input, ion-textarea, ion-select{
+    min-width: 100% !important;
+    border: 1px solid #999;
+    border-radius: 8px;
+}
+
+.item-inner, ion-item {
+    border-bottom-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.toolbar-background{
+    color: #ddd !important;
+    background-color: #222 !important;
+}
+
+.toolbar-title, .menutoggle {
+    color: #fff !important;
+}
+
+ion-content{
+    background-color: #F1F1F1 !important;
+    color: #222 !important;
+}
+
+.item, .no-bg{
+    background-color: rgba(0,0,0,0) !important;
+}
+
+button.big{
+    font-size: 1.1em !important;
+    height: 40px !important;
+}
+
+button.med{
+    font-size: 1em !important;
+    height: 40px !important;
+}
+
+.back-button{
+    color: #fff !important;
+}
+
+ion-icon {
+    &[class*="my-"] {
+       mask-size: contain;
+       mask-position: 50% 50%;
+       mask-repeat: no-repeat;
+       background: currentColor;
+       width: 1em;
+       height: 1em;
+    }
+    &[class*="my-incoming"] {
+       mask-image: url('../assets/incoming.svg');
+    }
+    &[class*="my-sent"] {
+       mask-image: url('../assets/export.svg');
+    }
+}

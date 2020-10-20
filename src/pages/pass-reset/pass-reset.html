@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Forget Password?</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card style="margin-top: 40%">
+    <ion-card-header text-center>
+      Reset Password
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="reset" (ngSubmit)="submit()">
+        <ion-list>
+          <ion-item>
+            <ion-input type="email" [(ngModel)]="email" placeholder="Email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <button ion-button color="dark" type="submit" class="med" block [disabled]="!reset.valid">Submit</button>
+          </ion-item>
+        </ion-list>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
